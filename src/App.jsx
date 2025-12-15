@@ -47,7 +47,7 @@ const SolarLayout = () => (
 
 function App() {
   return (
-    <Router>
+    <Router basename={import.meta.env.BASE_URL}>
       <div className="app-container" style={{ minHeight: '100vh', position: 'relative' }}>
         <Routes>
           <Route path="/" element={<MainLayout />} />
