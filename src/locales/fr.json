@@ -1,0 +1,51 @@
+{
+    "header": {
+        "home": "Accueil",
+        "about": "A propos",
+        "services": "Service",
+        "portfolio": "Portfolio",
+        "contact": "Contact"
+    },
+    "hero": {
+        "role": "Développeur Full Stack",
+        "contact_me": "Contactez-moi",
+        "discover_me": "Découvrez-moi"
+    },
+    "about": {
+        "title": "A propos",
+        "description": "Étudiant en BUT MMI à l'IUT de Lens, je recherche un stage de 9 à 10 semaines à partir du mois d'avril dans le domaine du développement web. Passionné et motivé, j’ai acquis des compétences en HTML, CSS, JavaScript et SQL que je souhaite mettre en pratique au sein d’une équipe dynamique pour contribuer à des projets concrets tout en continuant à apprendre.",
+        "cv_button": "Mon CV"
+    },
+    "skills": {
+        "title": "Mes compétences"
+    },
+    "services": {
+        "title": "Ce que je peux faire",
+        "frontend_title": "Front-end",
+        "frontend_desc": "Mes compétences en HTML et CSS avec une touche de JavaScript seront un atout dans les diverses tâches que vous me confierez.",
+        "backend_title": "Back-end",
+        "backend_desc": "Je serais aussi apte à utiliser Php et son framework Laravel pour un développement plus poussé.",
+        "design_title": "Design",
+        "design_desc": "En plus de fournir des services de développement, je peux également vous aider à designer des logos grâce à mes compétences avec la suite Adobe."
+    },
+    "portfolio": {
+        "title": "Travaux récents",
+        "view_details": "Voir détails",
+        "watch_video": "Voir la vidéo"
+    },
+    "stats": {
+        "years_study": "Années d'études",
+        "projects_done": "Projets réalisés",
+        "long_time": "Ça fait longtemps que vous êtes là !"
+    },
+    "contact": {
+        "title": "Contact",
+        "name_placeholder": "Nom",
+        "email_placeholder": "Email",
+        "message_placeholder": "Votre message...",
+        "send_button": "Envoyer"
+    },
+    "footer": {
+        "rights": "Tous droits réservés."
+    }
+}

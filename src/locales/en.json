@@ -1,0 +1,51 @@
+{
+    "header": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "portfolio": "Portfolio",
+        "contact": "Contact"
+    },
+    "hero": {
+        "role": "Full Stack Developer",
+        "contact_me": "Contact Me",
+        "discover_me": "Discover Me"
+    },
+    "about": {
+        "title": "About",
+        "description": "Student in BUT MMI at IUT de Lens, I am looking for a 9 to 10-week internship starting in April in the field of web development. Passionate and motivated, I have acquired skills in HTML, CSS, JavaScript, and SQL that I wish to put into practice within a dynamic team to contribute to concrete projects while continuing to learn.",
+        "cv_button": "My Resume"
+    },
+    "skills": {
+        "title": "My Skills"
+    },
+    "services": {
+        "title": "What I Can Do",
+        "frontend_title": "Front-end",
+        "frontend_desc": "My skills in HTML and CSS with a touch of JavaScript will be an asset in the various tasks you entrust to me.",
+        "backend_title": "Back-end",
+        "backend_desc": "I would also be able to use Php and its Laravel framework for more advanced development.",
+        "design_title": "Design",
+        "design_desc": "In addition to providing development services, I can also help you design logos thanks to my skills with the Adobe suite."
+    },
+    "portfolio": {
+        "title": "Recent Works",
+        "view_details": "View Details",
+        "watch_video": "Watch Video"
+    },
+    "stats": {
+        "years_study": "Years of Study",
+        "projects_done": "Projects Completed",
+        "long_time": "You've been here a while!"
+    },
+    "contact": {
+        "title": "Contact",
+        "name_placeholder": "Name",
+        "email_placeholder": "Email",
+        "message_placeholder": "Your message...",
+        "send_button": "Send"
+    },
+    "footer": {
+        "rights": "All Rights Reserved."
+    }
+}
