@@ -6,7 +6,7 @@ export const projects = [
         id: 1,
         title: 'Summer Motor Fest',
         category: 'Laravel / Full Stack',
-        img: '/assets/img/Banniere copie_page-0001.jpg',
+        img: '/Portfolio/assets/img/Banniere copie_page-0001.jpg',
         modalTitle: 'Summer Motor Fest',
         // Rich Description using JSX
         richDescription: (
@@ -102,7 +102,7 @@ export const projects = [
         id: 2,
         title: 'Système Solaire 3D',
         category: 'React / GSAP / 3D',
-        img: '/solar-system/jupiter.png', // Using Jupiter image as cover or I should use a generic one? I'll use Jupiter for now as it looks cool.
+        img: '/Portfolio/solar-system/jupiter.png', // Using Jupiter image as cover or I should use a generic one? I'll use Jupiter for now as it looks cool.
         modalTitle: 'Système Solaire Interactif',
         richDescription: (
             <div className="space-y-6">
