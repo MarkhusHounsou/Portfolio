@@ -1,16 +1,62 @@
-# React + Vite
+# Portfolio Personnel & Projet Système Solaire 3D
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bienvenue sur mon portfolio interactif. Ce projet met en avant mes compétences en développement web moderne, incluant une intégration complète d'un système solaire animé.
 
-Currently, two official plugins are available:
+## 🔗 Accès Direct (Recommandé)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Le site est déployé et accessible en ligne à l'adresse suivante :
 
-## React Compiler
+### 👉 **[https://markhushounsou.github.io/Portfolio/](https://markhushounsou.github.io/Portfolio/)**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 💻 Installation & Lancement Local
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Si vous devez évaluer le code ou lancer le projet sur votre machine, suivez ces étapes :
+
+### Prérequis
+*   **Node.js** (Version 16 ou supérieure recommandée)
+*   **Git**
+
+### 1. Récupérer le projet
+Ouvrez un terminal et clonez le dépôt :
+
+```bash
+git clone https://github.com/MarkhusHounsou/Portfolio.git
+cd Portfolio
+```
+
+### 2. Installer les dépendances
+Installez les librairies nécessaires (React, Tailwind, GSAP...) :
+
+```bash
+npm install
+```
+
+### 3. Lancer le serveur
+Démarrez le serveur de développement local :
+
+```bash
+npm run dev
+```
+Cliquez sur le lien qui s'affiche (généralement `http://localhost:5173/Portfolio/`) pour voir le site.
+
+> **Note :** Si vous souhaitez voir la version de production en local, utilisez `npm run build` puis `npm run preview`.
+
+---
+
+## 🛠 Stack Technique
+
+Ce projet a été réalisé avec les technologies suivantes :
+
+*   **Framework :** React 19 (Vite)
+*   **Styling :** Tailwind CSS
+*   **Animations :** GSAP (GreenSock) & Framer Motion
+*   **Routing :** React Router v7
+*   **Internationalisation :** i18next (Français/Anglais)
+
+## 🌟 Points Forts du Projet
+
+1.  **Système Solaire 3D (Slot 2)** : Une application immersive accessible depuis la page d'accueil.
+2.  **Architecture Modulaire** : Composants réutilisables et séparation claire du code.
+3.  **Design Responsive** : Adapté aux mobiles, tablettes et écrans larges.
