@@ -2,13 +2,71 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { FaExternalLinkAlt, FaPlay, FaTimes } from 'react-icons/fa';
 
-import { projects } from '../projects/data';
+import { useProjects } from '../projects/data';
+
+const ProjectCard = ({ project, onClick, isFeatured = false }) => {
+    const { t } = useTranslation();
+
+    return (
+        <motion.div
+            layout
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className={`group relative overflow-hidden rounded-2xl cursor-pointer ${isFeatured ? 'md:col-span-2 md:row-span-2 min-h-[500px]' : 'min-h-[300px]'}`}
+            onClick={() => onClick(project)}
+        >
+            {/* Background Image */}
+            <div className="absolute inset-0">
+                <img
+                    src={project.img}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                {/* Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300" />
+            </div>
+
+            {/* Content Content */}
+            <div className="absolute inset-0 p-8 flex flex-col justify-end">
+                {/* Category Badge */}
+                <div className="self-start mb-auto transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                    <span className="px-3 py-1 text-xs font-mono font-bold tracking-wider text-black bg-white rounded-full">
+                        {project.category}
+                    </span>
+                </div>
+
+                {/* Text Content */}
+                <div className="transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    <h3 className={`font-bold text-white mb-2 ${isFeatured ? 'text-3xl' : 'text-xl'}`}>
+                        {project.title}
+                    </h3>
+
+                    {isFeatured && (
+                        <p className="text-white/70 mb-4 line-clamp-2 max-w-xl">
+                            {t('projects.smf.intro')}
+                        </p>
+                    )}
+
+                    <div className="flex items-center gap-2 text-white/50 text-sm group-hover:text-white transition-colors">
+                        <span className="uppercase tracking-widest text-xs font-bold border-b border-transparent group-hover:border-white pb-0.5">
+                            {t('portfolio.view_details')}
+                        </span>
+                        <FaExternalLinkAlt className="text-xs opacity-0 group-hover:opacity-100 transition-opacity delay-100" />
+                    </div>
+                </div>
+            </div>
+        </motion.div>
+    );
+};
 
 const Portfolio = () => {
     const { t } = useTranslation();
     const navigate = useNavigate();
     const [selectedProject, setSelectedProject] = useState(null);
+    const projects = useProjects();
 
     const handleProjectClick = (project) => {
         if (project.link) {
@@ -18,108 +76,47 @@ const Portfolio = () => {
         }
     };
 
+    // Split projects for featured layout
+    const featuredProject = projects[0];
+    const otherProjects = projects.slice(1);
+
     return (
-        <section id="portfolio" className="section">
-            <div className="container">
-                <div style={{ textAlign: 'center', marginBottom: '60px' }}>
-                    <h3 style={{ fontSize: '2.5rem', marginBottom: '20px' }}>
-                        {t('portfolio.title')}
-                    </h3>
-                    <div style={{ width: '60px', height: '4px', background: 'var(--accent-gradient)', margin: '0 auto' }}></div>
+        <section id="portfolio" className="py-32 relative">
+            <div className="container mx-auto px-6">
+                {/* Header */}
+                <div className="text-center mb-20">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.5 }}
+                        className="inline-block"
+                    >
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-purple-400 bg-clip-text text-transparent">
+                            {t('portfolio.title')}
+                        </h2>
+                        <div className="h-1 w-24 mx-auto bg-gradient-to-r from-purple-500 to-blue-500 rounded-full" />
+                    </motion.div>
                 </div>
 
-                <div className="w-full">
-                    <motion.div
-                        className="portfolio-grid"
-                        initial="hidden"
-                        whileInView="visible"
-                        viewport={{ once: true, margin: "-100px" }}
-                        variants={{
-                            hidden: { opacity: 0 },
-                            visible: {
-                                opacity: 1,
-                                transition: {
-                                    staggerChildren: 0.1
-                                }
-                            }
-                        }}
-                    >
-                        {projects.map((project) => (
-                            <motion.div
-                                key={project.id}
-                                className=""
-                                style={{ marginBottom: '30px' }}
-                                variants={{
-                                    hidden: { opacity: 0, y: 50 },
-                                    visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 50 } }
-                                }}
-                                whileHover={{ y: -10 }}
-                            >
-                                <div
-                                    style={{
-                                        position: 'relative',
-                                        borderRadius: '16px',
-                                        overflow: 'hidden',
-                                        cursor: 'pointer',
-                                        boxShadow: '0 10px 30px rgba(0,0,0,0.5)'
-                                    }}
-                                    className="portfolio-item-wrapper"
-                                >
-                                    <img
-                                        src={project.img}
-                                        alt={project.title}
-                                        style={{ width: '100%', height: '250px', objectFit: 'cover', transition: 'transform 0.5s ease' }}
-                                        className="portfolio-img"
-                                    />
+                {/* Portfolio Showcase Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[300px]">
+                    {/* Featured Project (SMF) - Takes 2x2 space on Desktop */}
+                    {featuredProject && (
+                        <ProjectCard
+                            project={featuredProject}
+                            onClick={handleProjectClick}
+                            isFeatured={true}
+                        />
+                    )}
 
-                                    {/* Language Badge */}
-                                    <div style={{
-                                        position: 'absolute',
-                                        top: '15px',
-                                        right: '15px',
-                                        background: 'rgba(139,92,246,0.85)',
-                                        color: 'white',
-                                        padding: '5px 12px',
-                                        borderRadius: '20px',
-                                        fontSize: '0.8rem',
-                                        fontWeight: 'bold',
-                                        backdropFilter: 'blur(5px)',
-                                        boxShadow: '0 4px 10px rgba(0,0,0,0.2)'
-                                    }}>
-                                        {project.category}
-                                    </div>
-
-                                    {/* Hover Overlay */}
-                                    <motion.div
-                                        style={{
-                                            position: 'absolute',
-                                            top: 0, left: 0, width: '100%', height: '100%',
-                                            background: 'rgba(10,10,10,0.85)',
-                                            display: 'flex',
-                                            flexDirection: 'column',
-                                            justifyContent: 'center',
-                                            alignItems: 'center',
-                                            opacity: 0,
-                                            backdropFilter: 'blur(5px)'
-                                        }}
-                                        whileHover={{ opacity: 1 }}
-                                        transition={{ duration: 0.3 }}
-                                    >
-                                        <h4 style={{ color: 'white', marginBottom: '20px' }}>{project.title}</h4>
-                                        <div style={{ display: 'flex', gap: '15px' }}>
-                                            <button
-                                                onClick={() => handleProjectClick(project)}
-                                                className="btn-outline"
-                                                style={{ padding: '8px 15px', fontSize: '14px' }}
-                                            >
-                                                {t('portfolio.view_details')}
-                                            </button>
-                                        </div>
-                                    </motion.div>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </motion.div>
+                    {/* Other Projects */}
+                    {otherProjects.map((project) => (
+                        <ProjectCard
+                            key={project.id}
+                            project={project}
+                            onClick={handleProjectClick}
+                        />
+                    ))}
                 </div>
             </div>
 
@@ -130,75 +127,65 @@ const Portfolio = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        style={{
-                            position: 'fixed',
-                            top: 0, left: 0, right: 0, bottom: 0,
-                            background: 'rgba(0,0,0,0.9)',
-                            zIndex: 9999,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            padding: '20px'
-                        }}
+                        className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
                         onClick={() => setSelectedProject(null)}
                     >
                         <motion.div
-                            className="glass-card"
-                            initial={{ y: 50, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: 50, opacity: 0 }}
-                            style={{
-                                maxHeight: '90vh',
-                                overflowY: 'auto',
-                                width: '100%',
-                                position: 'relative',
-                                background: 'var(--bg-dark)',
-                                border: '1px solid rgba(255,255,255,0.1)'
-                            }}
+                            initial={{ scale: 0.95, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.95, opacity: 0 }}
+                            className="bg-[#0a0a0a] w-full max-w-[95vw] h-[90vh] overflow-hidden rounded-3xl border border-white/10 relative shadow-2xl flex flex-col"
                             onClick={(e) => e.stopPropagation()}
                         >
-                            <button
-                                onClick={() => setSelectedProject(null)}
-                                style={{
-                                    position: 'absolute',
-                                    top: '15px',
-                                    right: '15px',
-                                    background: 'transparent',
-                                    border: 'none',
-                                    color: 'white',
-                                    fontSize: '1.5rem',
-                                    cursor: 'pointer'
-                                }}
-                            >
-                                &times;
-                            </button>
+                            {/* Scrollable Content Container */}
+                            <div className="overflow-y-auto h-full custom-scrollbar">
 
-                            <img
-                                src={selectedProject.img}
-                                alt=""
-                                style={{ width: '100%', height: '300px', objectFit: 'cover', borderRadius: '8px', marginBottom: '20px' }}
-                            />
-
-                            <h3 style={{ marginBottom: '15px' }}>{selectedProject.modalTitle}</h3>
-
-                            {selectedProject.richDescription ? (
-                                <div style={{ marginBottom: '20px' }}>
-                                    {selectedProject.richDescription}
-                                </div>
-                            ) : (
-                                <p style={{ color: 'var(--text-muted)', marginBottom: '20px' }}>{selectedProject.modalDesc}</p>
-                            )}
-
-                            {selectedProject.video && (
-                                <a
-                                    href={selectedProject.video}
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="btn-primary"
+                                {/* Close Button (Sticky) */}
+                                <button
+                                    onClick={() => setSelectedProject(null)}
+                                    className="fixed top-6 right-8 z-50 p-3 bg-black/50 hover:bg-white hover:text-black rounded-full text-white transition-all duration-300 border border-white/10 backdrop-blur-sm"
                                 >
-                                    {t('portfolio.watch_video')}
-                                </a>
-                            )}
+                                    <FaTimes size={20} />
+                                </button>
+
+                                {/* Hero Image (Full Width, No Crop) */}
+                                <div className="relative w-full">
+                                    <img
+                                        src={selectedProject.img}
+                                        alt={selectedProject.title}
+                                        className="w-full h-auto object-contain max-h-[70vh] bg-black/50"
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent opacity-80" />
+                                </div>
+
+                                {/* Content Section */}
+                                <div className="p-8 lg:p-12 -mt-20 relative z-10">
+                                    <div className="max-w-4xl mx-auto">
+                                        <div className="flex items-center gap-4 mb-6">
+                                            <h2 className="text-4xl md:text-5xl font-bold text-white">{selectedProject.modalTitle}</h2>
+                                            <div className="px-4 py-1 text-sm font-mono font-bold tracking-wider text-purple-300 bg-purple-500/10 rounded-full border border-purple-500/20">
+                                                {selectedProject.category}
+                                            </div>
+                                        </div>
+
+                                        <div className="text-white/80 space-y-6 text-lg leading-relaxed mb-12">
+                                            {selectedProject.richDescription || selectedProject.modalDesc}
+                                        </div>
+
+                                        {selectedProject.video && (
+                                            <a
+                                                href={selectedProject.video}
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                                            >
+                                                <FaPlay size={14} />
+                                                {t('portfolio.watch_video')}
+                                            </a>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
                         </motion.div>
                     </motion.div>
                 )}

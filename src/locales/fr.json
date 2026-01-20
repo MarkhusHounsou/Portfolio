@@ -12,9 +12,53 @@
         "discover_me": "Découvrez-moi"
     },
     "about": {
-        "title": "A propos",
-        "description": "Étudiant en BUT MMI à l'IUT de Lens, je recherche un stage de 9 à 10 semaines à partir du mois d'avril dans le domaine du développement web. Passionné et motivé, j’ai acquis des compétences en HTML, CSS, JavaScript et SQL que je souhaite mettre en pratique au sein d’une équipe dynamique pour contribuer à des projets concrets tout en continuant à apprendre.",
-        "cv_button": "Mon CV"
+        "title": "PROFIL",
+        "description": "Étudiant en BUT 3 MMI (option Web), je recherche un stage pour avril 2026 orienté data ou dev ops. Créatif et curieux, je maîtrise HTML, CSS, JavaScript, PHP, React, et d'autres encore avec pour objectif d'apporter des solutions innovantes à vos projets digitaux.",
+        "cv_button": "Mon CV",
+        "exp_title": "Expériences & Formation",
+        "tools_title": "Logiciels Maîtrisés",
+        "languages_title": "Langues",
+        "exp1": {
+            "title": "Assistant Front Desk",
+            "place": "Insead, Fontainebleau",
+            "desc1": "Accueil et orientation visiteurs internationaux",
+            "desc2": "Gestion logistique et badges",
+            "desc3": "Support événements"
+        },
+        "exp2": {
+            "title": "Stagiaire Dev Web",
+            "place": "Léa Solidarité Femmes, Montgeron",
+            "desc1": "Diaporama Canva",
+            "desc2": "Maintenance WordPress",
+            "desc3": "Optimisation ergonomie"
+        },
+        "exp3": {
+            "title": "Employé E-commerce",
+            "place": "E.Leclerc, Varennes-sur-Seine",
+            "desc1": "Préparation commandes",
+            "desc2": "Gestion logistique",
+            "desc3": "Travail d'équipe"
+        },
+        "edu1": {
+            "title": "BUT MMI",
+            "place": "IUT D'Artois / Meaux",
+            "desc1": "Spécialité Développement Web"
+        },
+        "edu2": {
+            "title": "BUT Informatique",
+            "place": "UPEC Fontainebleau",
+            "desc1": "Fondamentaux informatiques"
+        },
+        "edu3": {
+            "title": "Baccalauréat Technologique",
+            "place": "Lycée André Malraux",
+            "desc1": "Mention Bien"
+        },
+        "lang_level": {
+            "native": "Langue maternelle",
+            "professional": "Niveau professionnel",
+            "academic": "Niveau scolaire"
+        }
     },
     "skills": {
         "title": "Mes compétences"
@@ -22,11 +66,14 @@
     "services": {
         "title": "Ce que je peux faire",
         "frontend_title": "Front-end",
-        "frontend_desc": "Mes compétences en HTML et CSS avec une touche de JavaScript seront un atout dans les diverses tâches que vous me confierez.",
+        "frontend_desc": "Conception d'interfaces modernes, réactives et accessibles avec HTML, CSS et JavaScript. Je transforme vos maquettes en expériences utilisateurs fluides et engageantes.",
+        "frontend_tags": "React, Tailwind, Framer Motion, Three.js",
         "backend_title": "Back-end",
-        "backend_desc": "Je serais aussi apte à utiliser Php et son framework Laravel pour un développement plus poussé.",
+        "backend_desc": "Développement de serveurs robustes et d'API performantes. J'utilise PHP et Laravel pour structurer vos données et assurer la sécurité de vos applications.",
+        "backend_tags": "Java, PHP, Node.js, Express, SQL, API REST",
         "design_title": "Design",
-        "design_desc": "En plus de fournir des services de développement, je peux également vous aider à designer des logos grâce à mes compétences avec la suite Adobe."
+        "design_desc": "Création d'identités visuelles et d'éléments graphiques sur mesure. Je conçois des logos et des interfaces qui reflètent l'essence de votre marque.",
+        "design_tags": "Figma, Blender, Adobe, Prototyping, UX Research"
     },
     "portfolio": {
         "title": "Travaux récents",
@@ -36,7 +83,9 @@
     "stats": {
         "years_study": "Années d'études",
         "projects_done": "Projets réalisés",
-        "long_time": "Ça fait longtemps que vous êtes là !"
+        "long_time": "Ça fait longtemps que vous êtes là !",
+        "title": "Tableau de Bord Dev",
+        "subtitle": "Analyse des compétences en temps réel"
     },
     "contact": {
         "title": "Contact",
@@ -46,6 +95,98 @@
         "send_button": "Envoyer"
     },
     "footer": {
-        "rights": "Tous droits réservés."
+        "role": "Développeur Web Front-End",
+        "stack": "React • Tailwind • JavaScript • UI Interactive",
+        "contact_btn": "Me contacter",
+        "built_with": "Développé avec React.",
+        "rights": "Tous droits réservés.",
+        "nav_title": "Navigation",
+        "contact_title": "Coordonnées",
+        "back_to_top": "RETOUR EN HAUT",
+        "phone": "06 58 56 64 98",
+        "email": "hounsoumarkhus2004@gmail.com"
+    },
+    "projects": {
+        "smf": {
+            "title": "Summer Motor Fest",
+            "intro": "Le **Summer Motor Fest** est bien plus qu'un simple site web : c'est le cœur numérique d'un festival automobile d'envergure. Conçue pour absorber un trafic intense, cette plateforme gère l'intégralité de l'expérience, de la vente de billets à l'inscription des exposants, en passant par la gestion administrative.",
+            "features": {
+                "ticketing_title": "Billetterie Intelligente",
+                "ticketing_desc": "Système complet avec génération de QR Codes sécurisés, envoi automatique par email et scan à l'entrée via une application dédiée.",
+                "exhibitors_title": "Espace Exposants",
+                "exhibitors_desc": "Workflow complet d'inscription : soumission de dossier, validation par les admins, paiement en ligne et attribution d'emplacement.",
+                "gallery_title": "Galerie Interactive",
+                "gallery_desc": "Upload massif de photos avec compression automatique et affichage optimisé (Lazy Loading) pour une expérience fluide sur mobile.",
+                "dashboard_title": "Dashboard Admin",
+                "dashboard_desc": "Vue d'aigle sur l'événement : CA en temps réel, nombre d'entrées, gestion des bénévoles et outils de modération."
+            },
+            "stack_title": "Stack Technique",
+            "challenge_title": "Challenge Majeur : La Charge",
+            "challenge_desc": "Le plus grand défi a été de gérer l'ouverture de la billetterie. Avec des milliers de connexions simultanées, la base de données était sous pression.",
+            "solution": "Solution :",
+            "solution_desc": "Mise en place d'un système de Queues (Files d'attente) pour le traitement des emails et paiements, couplé à un cache Redis agressif pour les requêtes de lecture. Résultat : 0 downtime.",
+            "modalDesc": "Plateforme événementielle complète (Billetterie, Exposants, Admin)."
+        },
+        "coming_soon": {
+            "category": "Bientôt",
+            "title": "Projet à venir",
+            "modalTitle": "Projet en cours de développement",
+            "modalDesc": "Ce projet est actuellement en phase de conception. Plus de détails seront disponibles prochainement.",
+            "tech": "En cours"
+        }
+    },
+    "dashboard": {
+        "back": "retour",
+        "root": "root@dev"
+    },
+    "terminal": {
+        "initializing": "Initialisation du noyau...",
+        "loading": "chargement des modules...",
+        "ok_react": "[OK] REACT_CORE chargé",
+        "ok_laravel": "[OK] LARAVEL_BRIDGE établi",
+        "analysing": "analyse des compétences...",
+        "expert": "EXPERT",
+        "advanced": "AVANCÉ",
+        "build_success": "BUILD SUCCÈS en 1.42s",
+        "select_mode": "Sélectionnez le mode de visualisation :",
+        "launch": "Lancer",
+        "init": "Initialiser",
+        "monitor_radar": "MONITEUR : RADAR",
+        "monitor_stream": "MONITEUR : FLUX",
+        "monitor_retro": "MONITEUR : RETRO",
+        "monitor_glitch": "MONITEUR : GLITCH",
+        "neural_net": "RÉSEAU NEURONAL"
+    },
+    "radar": {
+        "active": "RADAR ACTIF",
+        "scanning": "SCAN SECTEUR 7G",
+        "coords": "COORDS",
+        "zoom": "ZOOM",
+        "experience": "EXPÉRIENCE",
+        "diploma": "DIPLÔME",
+        "location": "LOCALISATION",
+        "age": "ÂGE",
+        "years_count": "3 ANS",
+        "diploma_name": "BUT 3 MMI",
+        "location_name": "PARIS, FR",
+        "age_count": "21 ANS",
+        "motivation": "NIVEAUX_MOTIVATION"
+    },
+    "stream": {
+        "title": "FLUX_DONNÉES_V4",
+        "queued": "EN ATTENTE",
+        "modules": "MODULES",
+        "fast_fwd": "ACCÉLÉRER",
+        "process_complete": "PROCESSUS TERMINÉ",
+        "verified": "VÉRIFIÉ",
+        "return": "RETOUR AU TERMINAL"
+    },
+    "glitch": {
+        "system_failure": "ÉCHEC SYSTÈME",
+        "critical_error": "ERREUR CRITIQUE DÉTECTÉE",
+        "init_recovery": "LANCEMENT SÉQUENCE RÉCUPÉRATION...",
+        "select_code": "> SÉLECTIONNEZ LE CODE CORRECT POUR AVANCER_",
+        "system_restored": "SYSTÈME RESTAURÉ",
+        "closing": "FERMETURE CONNEXION..."
     }
 }

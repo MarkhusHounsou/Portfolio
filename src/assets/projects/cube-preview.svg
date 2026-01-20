@@ -1,0 +1,120 @@
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Animated Background Gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0e27;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0f0f1e;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-opacity="0.3"/>
+    </filter>
+    
+    <radialGradient id="lightGradient" cx="30%" cy="30%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#000000;stop-opacity:0.5" />
+    </radialGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="400" fill="url(#bgGradient)"/>
+  
+  <!-- Grid Pattern (subtle) -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(139,92,246,0.05)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="600" height="400" fill="url(#grid)" opacity="0.3"/>
+  
+  <!-- Main Cube Group -->
+  <g transform="translate(200, 150)">
+    <!-- Cube Shadow -->
+    <ellipse cx="50" cy="120" rx="80" ry="30" fill="rgba(0,0,0,0.3)"/>
+    
+    <!-- Cube 3D Perspective -->
+    <g filter="url(#shadow)">
+      <!-- Back-left edge -->
+      <polygon points="0,80 40,50 40,120 0,150" fill="rgba(100,50,150,0.3)" stroke="#6B35CE" stroke-width="2"/>
+      
+      <!-- Front face (white) with 3x3 grid -->
+      <rect x="40" y="50" width="80" height="80" fill="#FFFFFF" stroke="#333" stroke-width="2" opacity="0.95"/>
+      
+      <!-- Front stickers (white face) -->
+      <!-- Row 1 -->
+      <rect x="45" y="55" width="22" height="22" fill="#FFFFFF" stroke="#222" stroke-width="1.5"/>
+      <rect x="71" y="55" width="22" height="22" fill="#FFFFFF" stroke="#222" stroke-width="1.5"/>
+      <rect x="97" y="55" width="22" height="22" fill="#FFFFFF" stroke="#222" stroke-width="1.5"/>
+      
+      <!-- Row 2 -->
+      <rect x="45" y="81" width="22" height="22" fill="#FFFFFF" stroke="#222" stroke-width="1.5"/>
+      <circle cx="82" cy="92" r="8" fill="#FFD700" opacity="0.8"/>
+      <rect x="97" y="81" width="22" height="22" fill="#FFFFFF" stroke="#222" stroke-width="1.5"/>
+      
+      <!-- Row 3 -->
+      <rect x="45" y="107" width="22" height="22" fill="#FFFFFF" stroke="#222" stroke-width="1.5"/>
+      <rect x="71" y="107" width="22" height="22" fill="#FFFFFF" stroke="#222" stroke-width="1.5"/>
+      <rect x="97" y="107" width="22" height="22" fill="#FFFFFF" stroke="#222" stroke-width="1.5"/>
+      
+      <!-- Top face (yellow) -->
+      <polygon points="40,50 100,20 180,20 120,50" fill="#FFD700" stroke="#333" stroke-width="2" opacity="0.9"/>
+      
+      <!-- Top stickers -->
+      <rect x="50" y="28" width="15" height="12" fill="#FFD700" stroke="#222" stroke-width="1"/>
+      <rect x="72" y="22" width="15" height="12" fill="#FFD700" stroke="#222" stroke-width="1"/>
+      <rect x="94" y="28" width="15" height="12" fill="#FFD700" stroke="#222" stroke-width="1"/>
+      
+      <!-- Right face (orange) -->
+      <polygon points="120,50 180,20 180,100 120,130" fill="#FF8C00" stroke="#333" stroke-width="2" opacity="0.85"/>
+      
+      <!-- Right stickers -->
+      <rect x="135" y="42" width="12" height="15" fill="#FF8C00" stroke="#222" stroke-width="1"/>
+      <rect x="157" y="52" width="12" height="15" fill="#FF8C00" stroke="#222" stroke-width="1"/>
+      <rect x="135" y="80" width="12" height="15" fill="#FF8C00" stroke="#222" stroke-width="1"/>
+      
+      <!-- Highlight/Light effect -->
+      <rect x="40" y="50" width="80" height="80" fill="url(#lightGradient)" opacity="0.3" stroke="none"/>
+    </g>
+  </g>
+  
+  <!-- Text Content -->
+  <g transform="translate(350, 150)">
+    <!-- Title -->
+    <text x="0" y="0" font-family="'Segoe UI', 'Arial', sans-serif" font-size="32" font-weight="700" fill="#FFFFFF" letter-spacing="1">
+      Rubik's Cube
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="0" y="35" font-family="'Segoe UI', 'Arial', sans-serif" font-size="14" fill="#A78BFA" opacity="0.9">
+      3D Interactive Game
+    </text>
+    
+    <!-- Features -->
+    <g transform="translate(0, 60)">
+      <!-- Feature 1: React -->
+      <circle cx="8" cy="8" r="4" fill="#61DAFB" opacity="0.8"/>
+      <text x="20" y="12" font-family="'Segoe UI', sans-serif" font-size="13" fill="#E0E7FF">React 18+</text>
+      
+      <!-- Feature 2: CSS 3D -->
+      <circle cx="8" cy="28" r="4" fill="#1572B6" opacity="0.8"/>
+      <text x="20" y="32" font-family="'Segoe UI', sans-serif" font-size="13" fill="#E0E7FF">CSS 3D</text>
+      
+      <!-- Feature 3: Interactive -->
+      <circle cx="8" cy="48" r="4" fill="#8B5CF6" opacity="0.8"/>
+      <text x="20" y="52" font-family="'Segoe UI', sans-serif" font-size="13" fill="#E0E7FF">Interactive</text>
+    </g>
+  </g>
+  
+  <!-- Corner Accent -->
+  <g transform="translate(550, 350)" opacity="0.6">
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#8B5CF6" stroke-width="2"/>
+    <path d="M -15 -15 L 15 15 M 15 -15 L -15 15" stroke="#8B5CF6" stroke-width="1.5" opacity="0.5"/>
+  </g>
+  
+  <!-- Bottom Accent Bar -->
+  <rect x="0" y="380" width="600" height="20" fill="rgba(139,92,246,0.1)" stroke="rgba(139,92,246,0.3)" stroke-width="1"/>
+  <text x="300" y="393" font-family="'Segoe UI', sans-serif" font-size="11" fill="#A78BFA" text-anchor="middle" opacity="0.7">
+    Fully Functional • Keyboard • Touch • Demo Mode
+  </text>
+</svg>

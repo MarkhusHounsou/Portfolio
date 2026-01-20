@@ -1,129 +1,174 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import moiImg from '../assets/ui/Moi.webp';
 
 const Hero = () => {
     const { t } = useTranslation();
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-    const textVariants = {
-        hidden: { opacity: 0, x: -50 },
-        visible: {
-            opacity: 1,
-            x: 0,
-            transition: {
-                duration: 0.8,
-                staggerChildren: 0.2
+    // Mouse parallax effect
+    useEffect(() => {
+        const handleMouseMove = (e) => {
+            setMousePosition({
+                x: (e.clientX - window.innerWidth / 2) / 50,
+                y: (e.clientY - window.innerHeight / 2) / 50
+            });
+        };
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => window.removeEventListener('mousemove', handleMouseMove);
+    }, []);
+
+    // Typewriter effect for role
+    const [displayedRole, setDisplayedRole] = useState('');
+    const roleText = t('hero.role');
+
+    useEffect(() => {
+        let index = 0;
+        const timer = setInterval(() => {
+            if (index <= roleText.length) {
+                setDisplayedRole(roleText.slice(0, index));
+                index++;
+            } else {
+                clearInterval(timer);
             }
-        }
-    };
-
-    const itemVariants = {
-        hidden: { opacity: 0, x: -50 },
-        visible: { opacity: 1, x: 0 }
-    };
+        }, 100);
+        return () => clearInterval(timer);
+    }, [roleText]);
 
     return (
-        <section id="hero" style={{
-            height: '100vh',
-            display: 'flex',
-            alignItems: 'center',
-            position: 'relative',
-            overflow: 'hidden',
-            paddingTop: '80px'
-        }}>
+        <section
+            id="hero"
+            className="relative min-h-screen flex items-center justify-center overflow-hidden"
+        >
 
-            <div className="container">
-                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
+            {/* Main Content */}
+            <div className="container mx-auto px-6 relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                    {/* Left: Text Content */}
                     <motion.div
-                        className="col-md-6"
-                        style={{ flex: '1', minWidth: '300px' }}
-                        variants={textVariants}
-                        initial="hidden"
-                        animate="visible"
+                        initial={{ opacity: 0, x: -50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1, delay: 0.5 }}
+                        style={{
+                            transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`
+                        }}
                     >
+                        {/* Name with 3D Effect */}
                         <motion.h1
-                            variants={itemVariants}
-                            style={{
-                                fontSize: 'clamp(3rem, 5vw, 4.5rem)',
-                                fontWeight: 700,
-                                marginBottom: '20px',
-                                lineHeight: 1.1
-                            }}
+                            className="text-6xl md:text-8xl font-black mb-6 leading-none"
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.7 }}
                         >
-                            Makhus <span className="text-gradient">Hounsou</span>
+                            <span className="block text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]">
+                                Makhus
+                            </span>
+                            <span className="block bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent drop-shadow-[0_0_50px_rgba(139,92,246,0.5)]">
+                                Hounsou
+                            </span>
                         </motion.h1>
 
-                        <div className="page-scroll">
-                            <motion.p
-                                variants={itemVariants}
-                                style={{
-                                    fontSize: '1.5rem',
-                                    marginBottom: '40px',
-                                    color: 'var(--text-muted)'
-                                }}
-                            >
-                                {t('hero.role')}
-                            </motion.p>
+                        {/* Typewriter Role */}
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 1.5 }}
+                            className="mb-12"
+                        >
+                            <p className="text-2xl md:text-3xl text-white/80 font-light">
+                                {displayedRole}
+                                <span className="inline-block w-0.5 h-8 bg-purple-400 ml-1 animate-pulse" />
+                            </p>
+                        </motion.div>
 
-                            <motion.div
-                                variants={itemVariants}
-                                style={{ display: 'flex', gap: '20px' }}
+                        {/* CTA Buttons */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 2 }}
+                            className="flex flex-wrap gap-6"
+                        >
+                            <motion.a
+                                href="#contact"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="group relative px-8 py-4 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full font-bold text-lg text-white overflow-hidden shadow-lg shadow-purple-500/50"
                             >
-                                <motion.a
-                                    href="#contact"
-                                    className="btn-primary"
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    {t('hero.contact_me')}
-                                </motion.a>
-                                <motion.a
-                                    href="#portfolio"
-                                    className="btn-outline"
-                                    whileHover={{ scale: 1.05 }}
-                                    whileTap={{ scale: 0.95 }}
-                                >
-                                    {t('hero.discover_me')}
-                                </motion.a>
-                            </motion.div>
-                        </div>
+                                <span className="relative z-10">{t('hero.contact_me')}</span>
+                                <motion.div
+                                    className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600"
+                                    initial={{ x: '-100%' }}
+                                    whileHover={{ x: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                />
+                            </motion.a>
+
+                            <motion.a
+                                href="#portfolio"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="px-8 py-4 border-2 border-white/30 rounded-full font-bold text-lg text-white hover:bg-white/10 hover:border-white transition-all"
+                            >
+                                {t('hero.discover_me')}
+                            </motion.a>
+                        </motion.div>
                     </motion.div>
 
+                    {/* Right: Profile Image */}
                     <motion.div
-                        className="col-md-6"
-                        style={{ flex: '1', minWidth: '300px', textAlign: 'center' }}
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, delay: 0.5 }}
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1, delay: 1 }}
+                        className="relative flex justify-center lg:justify-end"
                     >
-                        <div style={{
-                            position: 'relative',
-                            display: 'inline-block',
-                            marginTop: '20px'
-                        }}>
-                            <div style={{
-                                position: 'absolute',
-                                top: 0, left: 0, right: 0, bottom: 0,
-                                background: 'linear-gradient(to bottom, transparent, var(--bg-dark))',
-                                zIndex: 1,
-                                borderRadius: '80px'
-                            }}></div>
+                        <motion.div
+                            whileHover={{
+                                rotateY: 5,
+                                rotateX: 5,
+                                scale: 1.05
+                            }}
+                            transition={{ type: 'spring', stiffness: 300 }}
+                            style={{
+                                transform: `translate(${-mousePosition.x * 2}px, ${-mousePosition.y * 2}px)`,
+                                perspective: 1000
+                            }}
+                            className="relative"
+                        >
+                            {/* Glow Effect */}
+                            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/30 to-blue-500/30 rounded-[80px] blur-3xl scale-110" />
+
+                            {/* Image */}
                             <img
-                                src="/assets/img/Moi.webp"
+                                src={moiImg}
                                 alt="Makhus Hounsou"
-                                style={{
-                                    maxWidth: '100%',
-                                    height: 'auto',
-                                    maxHeight: '500px',
-                                    borderRadius: '80px',
-                                    border: '2px solid rgba(255,255,255,0.1)',
-                                    boxShadow: '0 0 50px rgba(139,92,246,0.2)'
-                                }}
+                                className="relative z-10 w-full max-w-md h-auto rounded-[80px] border-2 border-white/10 shadow-2xl"
                             />
-                        </div>
+                        </motion.div>
                     </motion.div>
                 </div>
             </div>
+
+            {/* Scroll Indicator */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 3 }}
+                className="absolute bottom-10 left-1/2 -translate-x-1/2"
+            >
+                <motion.div
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ duration: 1.5, repeat: Infinity }}
+                    className="flex flex-col items-center gap-2 text-white/50 cursor-pointer"
+                    onClick={() => document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                    <span className="text-sm uppercase tracking-widest">Scroll</span>
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                    </svg>
+                </motion.div>
+            </motion.div>
         </section>
     );
 };

@@ -12,9 +12,53 @@
         "discover_me": "Discover Me"
     },
     "about": {
-        "title": "About",
-        "description": "Student in BUT MMI at IUT de Lens, I am looking for a 9 to 10-week internship starting in April in the field of web development. Passionate and motivated, I have acquired skills in HTML, CSS, JavaScript, and SQL that I wish to put into practice within a dynamic team to contribute to concrete projects while continuing to learn.",
-        "cv_button": "My Resume"
+        "title": "PROFILE",
+        "description": "Student in BUT 3 MMI (Web option), I am looking for an internship for April 2026 oriented towards data or dev ops. Creative and curious, I master HTML, CSS, JavaScript, PHP, React, and others with the goal of bringing innovative solutions to your digital projects.",
+        "cv_button": "My Resume",
+        "exp_title": "Experiences & Education",
+        "tools_title": "Mastered Software",
+        "languages_title": "Languages",
+        "exp1": {
+            "title": "Front Desk Assistant",
+            "place": "Insead, Fontainebleau",
+            "desc1": "Reception and orientation of international visitors",
+            "desc2": "Logistics and badge management",
+            "desc3": "Event support"
+        },
+        "exp2": {
+            "title": "Web Dev Intern",
+            "place": "Léa Solidarité Femmes, Montgeron",
+            "desc1": "Canva Slideshow",
+            "desc2": "WordPress Maintenance",
+            "desc3": "Ergonomics optimization"
+        },
+        "exp3": {
+            "title": "E-commerce Employee",
+            "place": "E.Leclerc, Varennes-sur-Seine",
+            "desc1": "Order preparation",
+            "desc2": "Logistics management",
+            "desc3": "Teamwork"
+        },
+        "edu1": {
+            "title": "BUT MMI",
+            "place": "IUT D'Artois / Meaux",
+            "desc1": "Web Development Specialty"
+        },
+        "edu2": {
+            "title": "BUT Computer Science",
+            "place": "UPEC Fontainebleau",
+            "desc1": "Computer Science Fundamentals"
+        },
+        "edu3": {
+            "title": "Technological Baccalaureate",
+            "place": "Lycée André Malraux",
+            "desc1": "With Honors"
+        },
+        "lang_level": {
+            "native": "Native Language",
+            "professional": "Professional Level",
+            "academic": "Academic Level"
+        }
     },
     "skills": {
         "title": "My Skills"
@@ -22,11 +66,14 @@
     "services": {
         "title": "What I Can Do",
         "frontend_title": "Front-end",
-        "frontend_desc": "My skills in HTML and CSS with a touch of JavaScript will be an asset in the various tasks you entrust to me.",
+        "frontend_desc": "Modern, responsive, and accessible interface design using HTML, CSS, and JavaScript. I transform your mockups into fluid and engaging user experiences.",
+        "frontend_tags": "React, Tailwind, Framer Motion, Three.js",
         "backend_title": "Back-end",
-        "backend_desc": "I would also be able to use Php and its Laravel framework for more advanced development.",
+        "backend_desc": "Development of robust servers and high-performance APIs. I use PHP and Laravel to structure your data and ensure the security of your applications.",
+        "backend_tags": "Java, PHP, Node.js, Express, SQL, REST API",
         "design_title": "Design",
-        "design_desc": "In addition to providing development services, I can also help you design logos thanks to my skills with the Adobe suite."
+        "design_desc": "Creation of visual identities and custom graphic elements. I design logos and interfaces that reflect the essence of your brand.",
+        "design_tags": "Figma, Blender, Adobe, Prototyping, UX Research"
     },
     "portfolio": {
         "title": "Recent Works",
@@ -36,7 +83,9 @@
     "stats": {
         "years_study": "Years of Study",
         "projects_done": "Projects Completed",
-        "long_time": "You've been here a while!"
+        "long_time": "You've been here a while!",
+        "title": "Dev Dashboard",
+        "subtitle": "Real-time skills analysis"
     },
     "contact": {
         "title": "Contact",
@@ -46,6 +95,98 @@
         "send_button": "Send"
     },
     "footer": {
-        "rights": "All Rights Reserved."
+        "role": "Web Front-End Developer",
+        "stack": "React • Tailwind • JavaScript • Interactive UI",
+        "contact_btn": "Contact Me",
+        "built_with": "Built with React.",
+        "rights": "All Rights Reserved.",
+        "nav_title": "Site Map",
+        "contact_title": "Contact Info",
+        "back_to_top": "BACK TO TOP",
+        "phone": "+33 6 58 56 64 98",
+        "email": "hounsoumarkhus2004@gmail.com"
+    },
+    "projects": {
+        "smf": {
+            "title": "Summer Motor Fest",
+            "intro": "The **Summer Motor Fest** is much more than a simple website: it is the digital heart of a major car festival. Designed to handle intense traffic, this platform manages the entire experience, from ticket sales to exhibitor registration and administrative management.",
+            "features": {
+                "ticketing_title": "Smart Ticketing",
+                "ticketing_desc": "Complete system with secure QR Code generation, automatic email sending, and entry scanning via a dedicated app.",
+                "exhibitors_title": "Exhibitors Area",
+                "exhibitors_desc": "Complete registration workflow: application submission, admin validation, online payment, and space allocation.",
+                "gallery_title": "Interactive Gallery",
+                "gallery_desc": "Massive photo upload with automatic compression and optimized display (Lazy Loading) for a smooth mobile experience.",
+                "dashboard_title": "Admin Dashboard",
+                "dashboard_desc": "Eagle-eye view of the event: Real-time revenue, number of entries, volunteer management, and moderation tools."
+            },
+            "stack_title": "Technical Stack",
+            "challenge_title": "Major Challenge: The Load",
+            "challenge_desc": "The biggest challenge was managing the ticket office opening. With thousands of simultaneous connections, the database was under pressure.",
+            "solution": "Solution:",
+            "solution_desc": "Implementation of a Queue system for email and payment processing, coupled with aggressive Redis caching for read requests. Result: 0 downtime.",
+            "modalDesc": "Complete event platform (Ticketing, Exhibitors, Admin)."
+        },
+        "coming_soon": {
+            "category": "Coming Soon",
+            "title": "Upcoming Project",
+            "modalTitle": "Project under development",
+            "modalDesc": "This project is currently in the design phase. More details will be available soon.",
+            "tech": "In Progress"
+        }
+    },
+    "dashboard": {
+        "back": "return",
+        "root": "root@dev"
+    },
+    "terminal": {
+        "initializing": "Initializing kernel...",
+        "loading": "loading modules...",
+        "ok_react": "[OK] REACT_CORE loaded",
+        "ok_laravel": "[OK] LARAVEL_BRIDGE established",
+        "analysing": "analysing skills...",
+        "expert": "EXPERT",
+        "advanced": "ADVANCED",
+        "build_success": "BUILD SUCCESSFUL in 1.42s",
+        "select_mode": "Select visualization mode:",
+        "launch": "Launch",
+        "init": "Initialize",
+        "monitor_radar": "MONITOR: RADAR",
+        "monitor_stream": "MONITOR: STREAM",
+        "monitor_retro": "MONITOR: RETRO",
+        "monitor_glitch": "MONITOR: GLITCH",
+        "neural_net": "NEURAL NET"
+    },
+    "radar": {
+        "active": "RADAR ACTIVE",
+        "scanning": "SCANNING SECTOR 7G",
+        "coords": "COORDS",
+        "zoom": "ZOOM",
+        "experience": "EXPERIENCE",
+        "diploma": "DIPLOMA",
+        "location": "LOCATION",
+        "age": "AGE",
+        "years_count": "3 YEARS",
+        "diploma_name": "BUT 3 MMI",
+        "location_name": "PARIS, FR",
+        "age_count": "21 YEARS",
+        "motivation": "MOTIVATION_LEVELS"
+    },
+    "stream": {
+        "title": "DATA_STREAM_V4",
+        "queued": "QUEUED",
+        "modules": "MODULES",
+        "fast_fwd": "FAST_FWD",
+        "process_complete": "PROCESS COMPLETE",
+        "verified": "VERIFIED",
+        "return": "RETURN TO TERMINAL"
+    },
+    "glitch": {
+        "system_failure": "SYSTEM FAILURE",
+        "critical_error": "CRITICAL ERROR DETECTED",
+        "init_recovery": "INITIATE RECOVERY SEQUENCE...",
+        "select_code": "> SELECT THE CORRECT CODE TO ADVANCE_",
+        "system_restored": "SYSTEM RESTORED",
+        "closing": "CLOSING CONNECTION..."
     }
 }

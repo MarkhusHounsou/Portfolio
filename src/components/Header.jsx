@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import frFlag from '../assets/france.png';
-import ukFlag from '../assets/united-kingdom.png';
+
+import frFlag from '../assets/ui/france.png';
+import ukFlag from '../assets/ui/united-kingdom.png';
 
 const Header = () => {
     const { t, i18n } = useTranslation();
@@ -72,10 +73,14 @@ const Header = () => {
                 {/* Desktop Nav */}
                 <nav className="desktop-nav" style={{ display: 'flex', gap: '20px', alignItems: 'center' }}>
                     <a onClick={() => scrollToSection('hero')} className="nav-link" style={navLinkStyle}>{t('header.home')}</a>
+
+                    {/* Section links (same-page) */}
                     <a onClick={() => scrollToSection('about')} className="nav-link" style={navLinkStyle}>{t('header.about')}</a>
                     <a onClick={() => scrollToSection('service')} className="nav-link" style={navLinkStyle}>{t('header.services')}</a>
                     <a onClick={() => scrollToSection('portfolio')} className="nav-link" style={navLinkStyle}>{t('header.portfolio')}</a>
                     <a onClick={() => scrollToSection('contact')} className="nav-link" style={navLinkStyle}>{t('header.contact')}</a>
+
+
 
                     {/* Language Switcher */}
                     <button
@@ -95,9 +100,9 @@ const Header = () => {
                         }}
                         title="Switch Language"
                     >
-                        <img 
-                            src={i18n.language === 'en' ? frFlag : ukFlag} 
-                            alt={i18n.language === 'en' ? "Passer en Français" : "Switch to English"} 
+                        <img
+                            src={i18n.language === 'en' ? frFlag : ukFlag}
+                            alt={i18n.language === 'en' ? "Passer en Français" : "Switch to English"}
                             style={iconStyle}
                         />
                     </button>
@@ -116,9 +121,9 @@ const Header = () => {
                             alignItems: 'center'
                         }}
                     >
-                         <img 
-                            src={i18n.language === 'en' ? frFlag : ukFlag} 
-                            alt={i18n.language === 'en' ? "Passer en Français" : "Switch to English"} 
+                        <img
+                            src={i18n.language === 'en' ? frFlag : ukFlag}
+                            alt={i18n.language === 'en' ? "Passer en Français" : "Switch to English"}
                             style={{ ...iconStyle, width: '28px', height: '28px' }}
                         />
                     </button>
