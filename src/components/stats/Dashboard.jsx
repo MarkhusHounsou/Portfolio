@@ -55,9 +55,9 @@ const Dashboard = () => {
     return (
         <motion.div
             className="glass-card"
-            initial={{ height: '500px' }}
+            initial={{ height: '550px' }}
             animate={{
-                height: isMinimized ? '45px' : (isFullscreen ? '90vh' : '500px'),
+                height: isMinimized ? '45px' : (isFullscreen ? '90vh' : '550px'),
                 width: isFullscreen ? '95vw' : '100%',
                 position: isFullscreen ? 'fixed' : 'relative',
                 zIndex: isFullscreen ? 1000 : 1,

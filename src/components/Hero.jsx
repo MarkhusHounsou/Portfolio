@@ -19,22 +19,38 @@ const Hero = () => {
         return () => window.removeEventListener('mousemove', handleMouseMove);
     }, []);
 
-    // Typewriter effect for role
+    // Simplified looping typewriter effect
     const [displayedRole, setDisplayedRole] = useState('');
-    const roleText = t('hero.role');
+    const [isDeleting, setIsDeleting] = useState(false);
+    const [loopNum, setLoopNum] = useState(0);
+    const [typingSpeed, setTypingSpeed] = useState(150);
+
+    const roles = [t('hero.role'), "Frontend Enthusiast", "UI/UX Designer"]; // You can add more or keep as is
 
     useEffect(() => {
-        let index = 0;
-        const timer = setInterval(() => {
-            if (index <= roleText.length) {
-                setDisplayedRole(roleText.slice(0, index));
-                index++;
-            } else {
-                clearInterval(timer);
+        const handleType = () => {
+            const i = loopNum % roles.length;
+            const fullText = roles[i];
+
+            setDisplayedRole(
+                isDeleting
+                    ? fullText.substring(0, displayedRole.length - 1)
+                    : fullText.substring(0, displayedRole.length + 1)
+            );
+
+            setTypingSpeed(isDeleting ? 80 : 150);
+
+            if (!isDeleting && displayedRole === fullText) {
+                setTimeout(() => setIsDeleting(true), 2000);
+            } else if (isDeleting && displayedRole === '') {
+                setIsDeleting(false);
+                setLoopNum(loopNum + 1);
             }
-        }, 100);
-        return () => clearInterval(timer);
-    }, [roleText]);
+        };
+
+        const timer = setTimeout(handleType, typingSpeed);
+        return () => clearTimeout(timer);
+    }, [displayedRole, isDeleting]);
 
     return (
         <section
@@ -77,10 +93,10 @@ const Hero = () => {
                             transition={{ delay: 1.5 }}
                             className="mb-12"
                         >
-                            <p className="text-2xl md:text-3xl text-white/80 font-light">
-                                {displayedRole}
-                                <span className="inline-block w-0.5 h-8 bg-purple-400 ml-1 animate-pulse" />
-                            </p>
+                            <div className="text-2xl md:text-3xl text-white/80 font-light flex items-center h-10">
+                                <span>{displayedRole}</span>
+                                <span className="inline-block w-[3px] h-[1em] bg-purple-400 ml-1 animate-pulse self-center" />
+                            </div>
                         </motion.div>
 
                         {/* CTA Buttons */}

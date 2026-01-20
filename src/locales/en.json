@@ -21,6 +21,7 @@
         "exp1": {
             "title": "Front Desk Assistant",
             "place": "Insead, Fontainebleau",
+            "date": "July 2025 - Present",
             "desc1": "Reception and orientation of international visitors",
             "desc2": "Logistics and badge management",
             "desc3": "Event support"
@@ -28,6 +29,7 @@
         "exp2": {
             "title": "Web Dev Intern",
             "place": "Léa Solidarité Femmes, Montgeron",
+            "date": "April - June 2025",
             "desc1": "Canva Slideshow",
             "desc2": "WordPress Maintenance",
             "desc3": "Ergonomics optimization"
@@ -35,6 +37,7 @@
         "exp3": {
             "title": "E-commerce Employee",
             "place": "E.Leclerc, Varennes-sur-Seine",
+            "date": "June - August 2024",
             "desc1": "Order preparation",
             "desc2": "Logistics management",
             "desc3": "Teamwork"
@@ -42,16 +45,19 @@
         "edu1": {
             "title": "BUT MMI",
             "place": "IUT D'Artois / Meaux",
+            "date": "2023 - 2026",
             "desc1": "Web Development Specialty"
         },
         "edu2": {
             "title": "BUT Computer Science",
             "place": "UPEC Fontainebleau",
+            "date": "2021 - 2023",
             "desc1": "Computer Science Fundamentals"
         },
         "edu3": {
             "title": "Technological Baccalaureate",
             "place": "Lycée André Malraux",
+            "date": "2021",
             "desc1": "With Honors"
         },
         "lang_level": {

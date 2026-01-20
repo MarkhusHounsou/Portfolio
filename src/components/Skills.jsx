@@ -10,7 +10,8 @@ import cLogo from '../assets/skills/c.png';
 import phpLogo from '../assets/skills/php.png';
 import javaLogo from '../assets/skills/java.png';
 import pythonLogo from '../assets/skills/python.png';
-import reactLogo from '../assets/skills/react.svg';
+import reactLogo from '../assets/skills/react_modern.png'; // Updated to modern React logo
+import dockerLogo from '../assets/skills/docker.png';     // New Docker logo
 
 const SkillItem = ({ name, percent, color, logo }) => {
     return (
@@ -85,16 +86,17 @@ const Skills = () => {
                     <div className="col-md-4" style={{ flex: '1 1 300px' }}>
                         <SkillItem name="HTML/CSS" percent={100} color="#e44d26" logo={htmlLogo} />
                         <SkillItem name="React" percent={85} color="#61dafb" logo={reactLogo} />
-                        <SkillItem name="SQL" percent={75} color="#00758f" logo={sqlLogo} />
-                    </div>
-                    <div className="col-md-4" style={{ flex: '1 1 300px' }}>
                         <SkillItem name="JavaScript" percent={82} color="#f7df1e" logo={jsLogo} />
-                        <SkillItem name="Python" percent={80} color="#3776ab" logo={pythonLogo} />
-                        <SkillItem name="C" percent={66} color="#00599c" logo={cLogo} />
                     </div>
                     <div className="col-md-4" style={{ flex: '1 1 300px' }}>
                         <SkillItem name="PHP" percent={97} color="#777bb4" logo={phpLogo} />
+                        <SkillItem name="Python" percent={80} color="#3776ab" logo={pythonLogo} />
+                        <SkillItem name="SQL" percent={75} color="#00758f" logo={sqlLogo} />
+                    </div>
+                    <div className="col-md-4" style={{ flex: '1 1 300px' }}>
+                        <SkillItem name="C" percent={66} color="#00599c" logo={cLogo} />
                         <SkillItem name="Java" percent={45} color="#007396" logo={javaLogo} />
+                        <SkillItem name="Docker" percent={55} color="#2496ed" logo={dockerLogo} />
                     </div>
                 </div>
             </div>

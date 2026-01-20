@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import About from './components/About';
 import Skills from './components/Skills';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
@@ -16,6 +17,7 @@ const MainLayout = () => (
     <Header />
     <Hero />
     <main id="main" className="site-main" style={{ background: 'transparent' }}>
+      <About />
       <Skills />
       <Services />
       <Portfolio />
