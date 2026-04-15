@@ -84,7 +84,8 @@
     "portfolio": {
         "title": "Travaux récents",
         "view_details": "Voir détails",
-        "watch_video": "Voir la vidéo"
+        "watch_video": "Voir la vidéo",
+        "visit_site": "Voir le site"
     },
     "stats": {
         "years_study": "Années d'études",
@@ -115,7 +116,7 @@
     "projects": {
         "smf": {
             "title": "Summer Motor Fest",
-            "intro": "Le **Summer Motor Fest** est bien plus qu'un simple site web : c'est le cœur numérique d'un festival automobile d'envergure. Conçue pour absorber un trafic intense, cette plateforme gère l'intégralité de l'expérience, de la vente de billets à l'inscription des exposants, en passant par la gestion administrative.",
+            "intro": "Le Summer Motor Fest est bien plus qu'un simple site web : c'est le cœur numérique d'un festival automobile d'envergure. Conçue pour absorber un trafic intense, cette plateforme gère l'intégralité de l'expérience, de la vente de billets à l'inscription des exposants, en passant par la gestion administrative.",
             "features": {
                 "ticketing_title": "Billetterie Intelligente",
                 "ticketing_desc": "Système complet avec génération de QR Codes sécurisés, envoi automatique par email et scan à l'entrée via une application dédiée.",
@@ -131,6 +132,7 @@
             "challenge_desc": "Le plus grand défi a été de gérer l'ouverture de la billetterie. Avec des milliers de connexions simultanées, la base de données était sous pression.",
             "solution": "Solution :",
             "solution_desc": "Mise en place d'un système de Queues (Files d'attente) pour le traitement des emails et paiements, couplé à un cache Redis agressif pour les requêtes de lecture. Résultat : 0 downtime.",
+            "visuals_title": "Identité Visuelle & Design",
             "modalDesc": "Plateforme événementielle complète (Billetterie, Exposants, Admin)."
         },
         "coming_soon": {
@@ -139,6 +141,24 @@
             "modalTitle": "Projet en cours de développement",
             "modalDesc": "Ce projet est actuellement en phase de conception. Plus de détails seront disponibles prochainement.",
             "tech": "En cours"
+        },
+        "sushifast": {
+            "title": "SushiFast - Application Web React",
+            "intro": "SushiFast est une plateforme moderne de consultation de menus de sushis développée avec React. Conçue pour offrir une expérience utilisateur fluide, le projet met en avant des fonctionnalités avancées de filtrage, de tri et de gestion dynamique des données.",
+            "features": {
+                "catalog_title": "Catalogue Interactif",
+                "catalog_desc": "Exploration complète des menus avec visuels haute résolution et détails précis.",
+                "filter_title": "Filtrage Intelligent",
+                "filter_desc": "Recherche par saveurs spécifiques (ex: avocat, coriandre) et exclusion d'aliments indésirables.",
+                "details_title": "Détails Menus",
+                "details_desc": "Fiche technique pour chaque box listant les ingrédients et quantités.",
+                "analysis_title": "Analyse de Données",
+                "analysis_desc": "Identification automatique des menus \"extrêmes\" (< 13 pièces) et calcul du prix total du lot."
+            },
+            "stack_title": "Stack Technique",
+            "deployment_title": "Procédure de Déploiement",
+            "deployment_desc": "L'application est configurée pour un déploiement automatisé sur GitHub Pages via une branche isolée, garantissant une mise à jour rapide et sécurisée.",
+            "modalDesc": "Plateforme moderne de consultation de menus de sushis avec filtrage avancé."
         }
     },
     "dashboard": {

@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import cvPdf from '../assets/docs/CVFINAL.pdf';
+import cvPdf from '../assets/docs/CVFINAL.jpg';
 
 // Import Assets
 import franceFlag from '../assets/ui/france.png';

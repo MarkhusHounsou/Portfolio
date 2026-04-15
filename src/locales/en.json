@@ -84,7 +84,8 @@
     "portfolio": {
         "title": "Recent Works",
         "view_details": "View Details",
-        "watch_video": "Watch Video"
+        "watch_video": "Watch Video",
+        "visit_site": "Visit Site"
     },
     "stats": {
         "years_study": "Years of Study",
@@ -131,6 +132,7 @@
             "challenge_desc": "The biggest challenge was managing the ticket office opening. With thousands of simultaneous connections, the database was under pressure.",
             "solution": "Solution:",
             "solution_desc": "Implementation of a Queue system for email and payment processing, coupled with aggressive Redis caching for read requests. Result: 0 downtime.",
+            "visuals_title": "Visual Identity & Design",
             "modalDesc": "Complete event platform (Ticketing, Exhibitors, Admin)."
         },
         "coming_soon": {
@@ -139,6 +141,24 @@
             "modalTitle": "Project under development",
             "modalDesc": "This project is currently in the design phase. More details will be available soon.",
             "tech": "In Progress"
+        },
+        "sushifast": {
+            "title": "SushiFast - React Web Application",
+            "intro": "SushiFast is a modern sushi menu consultation platform developed with React. Designed to provide a smooth user experience, the project highlights advanced filtering, sorting, and dynamic data management features.",
+            "features": {
+                "catalog_title": "Interactive Catalog",
+                "catalog_desc": "Complete menu exploration with high-resolution visuals and precise details.",
+                "filter_title": "Intelligent Filtering",
+                "filter_desc": "Search by specific flavors (e.g., avocado, cilantro) and exclusion of unwanted foods.",
+                "details_title": "Menu Details",
+                "details_desc": "Technical sheet for each box listing ingredients and quantities.",
+                "analysis_title": "Data Analysis",
+                "analysis_desc": "Automatic identification of \"extreme\" menus (< 13 pieces) and total batch price calculation."
+            },
+            "stack_title": "Technical Stack",
+            "deployment_title": "Deployment Procedure",
+            "deployment_desc": "The application is configured for automated deployment on GitHub Pages via an isolated branch, ensuring fast and secure updates.",
+            "modalDesc": "Modern sushi menu consultation platform with advanced filtering."
         }
     },
     "dashboard": {

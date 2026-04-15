@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
@@ -67,6 +67,25 @@ const Portfolio = () => {
     const navigate = useNavigate();
     const [selectedProject, setSelectedProject] = useState(null);
     const projects = useProjects();
+
+    // Prevent scrolling when modal is open and hide header
+    useEffect(() => {
+        if (selectedProject) {
+            document.body.style.overflow = 'hidden';
+            // Find header and lower its z-index or hide it
+            const header = document.querySelector('header');
+            if (header) header.style.zIndex = '10';
+        } else {
+            document.body.style.overflow = 'unset';
+            const header = document.querySelector('header');
+            if (header) header.style.zIndex = '1000';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+            const header = document.querySelector('header');
+            if (header) header.style.zIndex = '1000';
+        };
+    }, [selectedProject]);
 
     const handleProjectClick = (project) => {
         if (project.link) {
@@ -140,10 +159,9 @@ const Portfolio = () => {
                             {/* Scrollable Content Container */}
                             <div className="overflow-y-auto h-full custom-scrollbar">
 
-                                {/* Close Button (Sticky) */}
                                 <button
                                     onClick={() => setSelectedProject(null)}
-                                    className="fixed top-6 right-8 z-50 p-3 bg-black/50 hover:bg-white hover:text-black rounded-full text-white transition-all duration-300 border border-white/10 backdrop-blur-sm"
+                                    className="absolute top-6 right-6 z-50 p-3 bg-black/50 hover:bg-white hover:text-black rounded-full text-white transition-all duration-300 border border-white/10 backdrop-blur-sm"
                                 >
                                     <FaTimes size={20} />
                                 </button>
@@ -151,7 +169,7 @@ const Portfolio = () => {
                                 {/* Hero Image (Full Width, No Crop) */}
                                 <div className="relative w-full">
                                     <img
-                                        src={selectedProject.img}
+                                        src={selectedProject.modalImage || selectedProject.img}
                                         alt={selectedProject.title}
                                         className="w-full h-auto object-contain max-h-[70vh] bg-black/50"
                                     />
@@ -161,8 +179,8 @@ const Portfolio = () => {
                                 {/* Content Section */}
                                 <div className="p-8 lg:p-12 -mt-20 relative z-10">
                                     <div className="max-w-4xl mx-auto">
-                                        <div className="flex items-center gap-4 mb-6">
-                                            <h2 className="text-4xl md:text-5xl font-bold text-white">{selectedProject.modalTitle}</h2>
+                                        <div className="flex flex-wrap items-center gap-4 mb-6">
+                                            <h2 className="text-3xl md:text-5xl font-bold text-white">{selectedProject.modalTitle}</h2>
                                             <div className="px-4 py-1 text-sm font-mono font-bold tracking-wider text-purple-300 bg-purple-500/10 rounded-full border border-purple-500/20">
                                                 {selectedProject.category}
                                             </div>
@@ -172,17 +190,31 @@ const Portfolio = () => {
                                             {selectedProject.richDescription || selectedProject.modalDesc}
                                         </div>
 
-                                        {selectedProject.video && (
-                                            <a
-                                                href={selectedProject.video}
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                                            >
-                                                <FaPlay size={14} />
-                                                {t('portfolio.watch_video')}
-                                            </a>
-                                        )}
+                                        <div className="flex flex-wrap gap-4">
+                                            {selectedProject.video && (
+                                                <a
+                                                    href={selectedProject.video}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="inline-flex items-center gap-3 px-8 py-4 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                                                >
+                                                    <FaPlay size={14} />
+                                                    {t('portfolio.watch_video')}
+                                                </a>
+                                            )}
+
+                                            {selectedProject.url && (
+                                                <a
+                                                    href={selectedProject.url}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="inline-flex items-center gap-3 px-8 py-4 bg-purple-600 text-white font-bold rounded-full hover:bg-purple-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                                                >
+                                                    <FaExternalLinkAlt size={14} />
+                                                    {t('portfolio.visit_site')}
+                                                </a>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
