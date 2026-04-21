@@ -142,6 +142,24 @@
             "modalDesc": "This project is currently in the design phase. More details will be available soon.",
             "tech": "In Progress"
         },
+        "cinescope": {
+            "title": "Cinescope - Movie Database",
+            "intro": "**Cinescope** is a comprehensive movie database application powered by the TMDB (The Movie Database) API. Designed for film enthusiasts, this React application provides instant access to thousands of movies with detailed information, ratings, budgets, and more.",
+            "features": {
+                "catalog_title": "Complete Movie Catalog",
+                "catalog_desc": "Browse thousands of movies with high-quality posters, synopsis, and metadata from TMDB.",
+                "ratings_title": "Ratings & Reviews",
+                "ratings_desc": "View comprehensive ratings, user scores, and critical reviews for each film.",
+                "search_title": "Advanced Search",
+                "search_desc": "Powerful search and filtering system to find movies by genre, year, rating, and more.",
+                "details_title": "Rich Movie Details",
+                "details_desc": "Budget, revenue, runtime, release dates, cast information, and production details for every film."
+            },
+            "stack_title": "Technical Stack",
+            "api_title": "TMDB API Integration",
+            "api_desc": "Seamless integration with The Movie Database API to fetch real-time movie data, ensuring always up-to-date information with thousands of films at your fingertips.",
+            "modalDesc": "Comprehensive movie database application with TMDB API integration."
+        },
         "sushifast": {
             "title": "SushiFast - React Web Application",
             "intro": "SushiFast is a modern sushi menu consultation platform developed with React. Designed to provide a smooth user experience, the project highlights advanced filtering, sorting, and dynamic data management features.",

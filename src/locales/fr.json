@@ -142,6 +142,24 @@
             "modalDesc": "Ce projet est actuellement en phase de conception. Plus de détails seront disponibles prochainement.",
             "tech": "En cours"
         },
+        "cinescope": {
+            "title": "Cinescope - Base de Données Films",
+            "intro": "**Cinescope** est une application complète de base de données cinématographique alimentée par l'API TMDB (The Movie Database). Conçue pour les amateurs de cinéma, cette application React offre un accès instantané à des milliers de films avec des informations détaillées, des évaluations, des budgets, et bien plus.",
+            "features": {
+                "catalog_title": "Catalogue Complet de Films",
+                "catalog_desc": "Parcourez des milliers de films avec des affiches haute qualité, des synopsis et des métadonnées de TMDB.",
+                "ratings_title": "Évaluations & Critiques",
+                "ratings_desc": "Consultez les évaluations complètes, les notes utilisateurs et les critiques professionnelles pour chaque film.",
+                "search_title": "Recherche Avancée",
+                "search_desc": "Système de recherche et filtrage puissant pour trouver des films par genre, année, note, et plus.",
+                "details_title": "Détails Enrichis",
+                "details_desc": "Budget, revenus, durée, dates de sortie, informations sur la distribution et détails de production pour chaque film."
+            },
+            "stack_title": "Stack Technique",
+            "api_title": "Intégration API TMDB",
+            "api_desc": "Intégration transparente avec l'API The Movie Database pour récupérer les données films en temps réel, garantissant des informations toujours à jour avec des milliers de films à votre portée.",
+            "modalDesc": "Application complète de base de données cinématographique avec intégration API TMDB."
+        },
         "sushifast": {
             "title": "SushiFast - Application Web React",
             "intro": "SushiFast est une plateforme moderne de consultation de menus de sushis développée avec React. Conçue pour offrir une expérience utilisateur fluide, le projet met en avant des fonctionnalités avancées de filtrage, de tri et de gestion dynamique des données.",
